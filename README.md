@@ -28,7 +28,10 @@ Talkspace credentials to.
 
 1. Clone this repository to your local machine.
 2. Follow the instructions [here](https://github.com/vaughn-johnson/talkspace-scraper) to scrape your own data into a MongoDB server. You can set up a server in the cloud for free [here](https://www.mongodb.com/cloud/atlas) or you can install MongoDB locally [here](https://docs.mongodb.com/manual/installation/)
-3. From Step 1, you should procure a [MongoDB connection string](https://docs.mongodb.com/manual/reference/connection-string/). Copy this string to your clipboard and navigate to the directory you cloned this respository to. When you are in the `talkspace-notebook` directory, run the following command to set the environment to point to your own `echo -e "MONGO_CONNECTION_STRING=$(pbpaste | cat)" > .env`
+3. From Step 1, you should procure a [MongoDB connection string](https://docs.mongodb.com/manual/reference/connection-string/). Copy this string to your clipboard and navigate to the directory you cloned this respository to. When you are in the `talkspace-notebook` directory, run the following command to set the environment to point to your own
+```
+echo -e "MONGO_CONNECTION_STRING=$(pbpaste | cat)" > .env
+```
 4. Verify your environment is set correctly by running `cat .env` and seeing somethign resembling
 ```
 mongodb://mongodb0.example.com:27017
