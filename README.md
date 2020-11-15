@@ -1,5 +1,5 @@
 # Talkspace Data Exploration and Analysis
-This project contains two identical analyses done with R and Python in Jupyter notebooks exploring my own scraped Talkspace data. Any Talksapce user can plug in their own data, draw their own conclusions, and expand on their own questions using this existing framework.
+This project contains two identical analyses done with R and Python in Jupyter notebooks. It explores my own scraped Talkspace data, but any Talksapce user can plug in their own data to draw his or her own conclusions. You can easily expand on your own questions using this as a starting point.
 
 ## Setting up your environmnet
 This project manages both its [R](https://github.com/vaughn-johnson/talkspace-notebook/blob/main/r_env.yml) and [Python](https://github.com/vaughn-johnson/talkspace-notebook/blob/main/python_env.yml) environmnets using [conda](https://docs.conda.io/en/latest/). To quote from the [conda documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html):
@@ -12,14 +12,15 @@ This project manages both its [R](https://github.com/vaughn-johnson/talkspace-no
 >   - `conda env create -f [either r_env or python_env].yml`
 >   - The first line of the yml file sets the new environment's name. For details see Creating an environment file manually.
 >
-> 2. Activate the new environment using `conda activate myenv`
+> 2. Activate the new environment using `conda activate [talkspace-r or talkspace-python]`
 >
 > 3. Verify that the new environment was installed correctly:
 >   - `conda env list`
 >   - You can also use `conda info --envs`
 
 ## Using your own Talkspace Data
-You can scrape your own data and point the notebook to it.
+You can scrape your own data and point your notebook to it.
+
 Ideally, this process would be a little smoother for you, but given the sensitive nature of this data, 
 I would rather add some hurdles to make sure people are properly vetting who they are giving their
 Talkspace credentials to.
@@ -34,6 +35,6 @@ echo -e "MONGO_CONNECTION_STRING=$(pbpaste | cat)" > .env
 ```
 4. Verify your environment is set correctly by running `cat .env` and seeing somethign resembling
 ```
-mongodb://mongodb0.example.com:27017
+MONGO_CONNECTION_STRING=mongodb://mongodb0.example.com:27017
 ```
 5. You're all set! You can use both notebooks the way you normally would be running cells.
